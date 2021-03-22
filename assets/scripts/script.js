@@ -39,6 +39,20 @@ function getCityWeather(cityName) {
       return response.json();
     })
     .then(function (data) {
+      // Build the Current Weather Section
+      buildCurrentWeather(cityName, data);
+      // Build the Forecast Section
+      buildForecast(data);
+    });
+}
+
+// Build the weather image
+function buildWeatherIcon(iconName) {
+  return `http://openweathermap.org/img/wn/${iconName}.png`;
+}
+
+// Build the current weather section
+function buildCurrentWeather(cityName, data) {
       // Clear out current weather for search city
       $("#currentWeather").empty();
       var today = moment().format('L');
@@ -80,15 +94,6 @@ function getCityWeather(cityName) {
       // Set the UV Index background color based upon the value
       // uviEl.css("background-color", uviColors[data.current.uvi]);
       $("#uviNumb").css("background-color", uviColors[data.current.uvi]);
-
-      // Build the Forecast Section
-      buildForecast(data);
-    });
-}
-
-// Build the weather image
-function buildWeatherIcon(iconName) {
-  return `http://openweathermap.org/img/wn/${iconName}.png`;
 }
 
 // Build the forecast section
