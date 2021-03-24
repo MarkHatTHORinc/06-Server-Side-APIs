@@ -200,7 +200,6 @@ $("#searchCity").on("click", function (event) {
 // Listen for one of the previously searched cities to be clicked
 $("#previousSearch").on('click', '.btn', function (event) {
   event.preventDefault();
-  console.log($(this).text());
   getGeoInfo($(this).text());
 });
 
