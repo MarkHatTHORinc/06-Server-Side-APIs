@@ -40,7 +40,6 @@ function getGeoInfo(cityName) {
       return response.json();
     })
     .then(data => {
-      // console.log(data);
       lat = data[0].lat;
       lon = data[0].lon;
       // Save search city to local storage
