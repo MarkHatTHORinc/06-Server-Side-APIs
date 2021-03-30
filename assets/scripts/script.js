@@ -28,7 +28,7 @@ function toPascalCase(myString) {
 // Get Geo info for City - lattitude and longitude
 function getGeoInfo(cityName) {
 
-  var geoInfoUrl = encodeURI(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`);
+  var geoInfoUrl = encodeURI(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`);
 
   fetch(geoInfoUrl, {
     method: 'GET', //GET is the default.
